@@ -6,7 +6,8 @@ export const InputCheckbox: InputCheckboxComponent = ({ id, checked = false, dis
   const { current: inputId } = useRef(`RampInputCheckbox-${id}`)
 
   return (
-    <div className="RampInputCheckbox--container" data-testid={inputId}>
+    // BUG-FIX-#2 --> changing the click event from the input tag to div tag; the actual checkbox is left hidden to save the aesthetics
+    <div className="RampInputCheckbox--container" data-testid={inputId} onClick={() => onChange(!checked)}>
       <label
         className={classNames("RampInputCheckbox--label", {
           "RampInputCheckbox--label-checked": checked,
