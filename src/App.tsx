@@ -27,7 +27,7 @@ export function App() {
     // transactionsByEmployeeUtils.invalidateData()
 
     await employeeUtils.fetchAll()
-    // BUG-FIX-#5-part1&part2 --> Moved the setIsLoading(false) code after line 28 
+    // BUG-FIX-#5-part1&part2 -->  Moved the setIsLoading(false) code after line 28 
     setIsLoading(false)
     await paginatedTransactionsUtils.fetchAll()
 
