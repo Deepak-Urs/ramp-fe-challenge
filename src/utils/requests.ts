@@ -35,7 +35,8 @@ export const getTransactionsPaginated = ({
 
   return {
     nextPage,
-    data: data.transactions.slice(start, end),
+    // BUG-FIX-#4 --> changed the starting index of pagination values of the results
+    data: data.transactions.slice(0, end),
   }
 }
 
